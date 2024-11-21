@@ -6,13 +6,14 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Book Store</title>
+    <title>Livraria</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
 <?php include 'navbar.php'; ?>
 <div class="container">
-    <h2>Available Books</h2>
+    <h2>Livros Disponíveis</h2>
     <div class="row">
         <?php
         // Query com JOINs para buscar os dados do livro, autor e categoria
@@ -37,13 +38,13 @@ session_start();
                             <?= $row['titulo'] ?> 
                             <small class="text-muted">(<?= $row['categoria'] ?>)</small>
                         </h5>
-                        <p class="card-text"><strong>Author:</strong> <?= $row['autor'] ?></p>
-                        <p class="card-text"><strong>Price:</strong> $<?= $row['preco'] ?></p>
-                        <a href="cart.php?id=<?= $row['id'] ?>" class="btn btn-primary">Add to Cart</a>
+                        <p class="card-text"><strong>Autor:</strong> <?= $row['autor'] ?></p>
+                        <p class="card-text"><strong>Preço:</strong> $<?= $row['preco'] ?></p>
+                        <a href="classes/Carrinho.class.php?id=<?= $row['id'] ?>" class="btn btn-primary">Adicionar ao Carrinho</a>
                         <!-- Botão de deletar -->
-                        <a href="delete.php?id=<?= $row['id'] ?>" 
+                        <a href="classes/Delete.class.php?id=<?= $row['id'] ?>" 
                            class="btn btn-danger"
-                           onclick="return confirm('Are you sure you want to delete this book?');">
+                           onclick="return confirm('Você tem certeza que deseja deletar este livro?');">
                            Delete
                         </a>
                     </div>

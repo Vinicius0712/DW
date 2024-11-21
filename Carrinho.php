@@ -5,19 +5,20 @@ require_once('classes/Carrinho.class.php');
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Shopping Cart</title>
+    <title>Carrinho</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
 <?php include 'navbar.php'; ?>
 <div class="container">
-    <h2>Your Cart</h2>
+    <h2>Seu Carrinho</h2>
     <table class="table">
         <thead>
             <tr>
-                <th>Title</th>
-                <th>Price</th>
-                <th>Quantity</th>
+                <th>Título</th>
+                <th>Preço</th>
+                <th>Quantidade</th>
                 <th>Total</th>
             </tr>
         </thead>

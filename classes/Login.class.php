@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (password_verify($senha, $user['senha'])) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['nivelPermissao'] = $user['nivelPermissao']; // Armazenando o nível de permissão
-            header("Location: index.php");
+            header("Location: ../index.php");
         } else {
             echo "Credenciais inválidas";
         }

@@ -7,6 +7,7 @@ require_once('classes/RegistroLivro.class.php');
 <head>
     <title>Adicionar Livro</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
 <?php include 'navbar.php'; ?>

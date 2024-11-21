@@ -48,11 +48,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <title>Checkout</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
 <?php include 'navbar.php'; ?>
 <div class="container">
-    <h2>Checkout</h2>
+    <h2>Checagem</h2>
     <h3>Total: $<?= number_format($totalPrice, 2) ?></h3>
     <form method="post">
         <button type="submit" class="btn btn-primary">Complete Purchase</button>

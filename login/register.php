@@ -1,5 +1,5 @@
 <?php
-include 'config/database.php';
+include '../config/database.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nome = $_POST['nome'];
     $email = $_POST['email'];
@@ -20,9 +20,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <title>Register</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
-<?php include 'navbar.php'; ?>
+<?php include '../navbar.php'; ?>
 <div class="container">
     <h2>Register</h2>
     <form method="post">
@@ -41,8 +42,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="form-group">
             <label for="nivelPermissao">Permission Level:</label>
             <select class="form-control" name="nivelPermissao" required>
-                <option value="1">1 - Normal User</option>
-                <option value="2">2 - Admin</option>
+                <option value="1">Usuário Normal</option>
+                <option value="2">Admin</option>
             </select>
         </div>
         <button type="submit" class="btn btn-primary">Register</button>

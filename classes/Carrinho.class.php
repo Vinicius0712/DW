@@ -11,7 +11,7 @@ if (!isset($_SESSION['cart'])) {
 if (isset($_GET['id'])) {
     $bookId = $_GET['id'];
     $_SESSION['cart'][] = $bookId;
-    header("Location: cart.php");
+    header("Location: ../Carrinho.php");
     exit();
 }
 
