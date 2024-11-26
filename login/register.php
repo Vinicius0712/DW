@@ -18,14 +18,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Register</title>
+    <title>Cadastro</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
 <?php include '../navbar.php'; ?>
 <div class="container">
-    <h2>Register</h2>
+    <h2>Cadastro</h2>
     <form method="post">
         <div class="form-group">
             <label for="nome">Name:</label>
@@ -40,13 +40,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="password" class="form-control" name="senha" required>
         </div>
         <div class="form-group">
-            <label for="nivelPermissao">Permission Level:</label>
+            <label for="nivelPermissao">Níveis de Permissão:</label>
             <select class="form-control" name="nivelPermissao" required>
                 <option value="1">Usuário Normal</option>
                 <option value="2">Admin</option>
             </select>
         </div>
-        <button type="submit" class="btn btn-primary">Register</button>
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
     </form>
 </div>
 </body>

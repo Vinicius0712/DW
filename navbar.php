@@ -5,13 +5,15 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-      <li class="nav-item"><a class="nav-link" href="Carrinho.php">Carrinho</a></li>
-      <li class="nav-item"><a class="nav-link" href="RegistroLivro.php">Cadastro Livro</a></li>
+      <li class="nav-item"><a class="nav-link" href="../paginas/index.php">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="../paginas/Carrinho.php">Carrinho</a></li>
+      <?php if (isset($_SESSION['nivelPermissao']) && $_SESSION['nivelPermissao'] == 2): ?>
+      <li class="nav-item"><a class="nav-link" href="../paginas/RegistroLivro.php">Cadastro Livro</a></li>
+      <?php endif; ?>
       <?php if (isset($_SESSION['user_id'])): ?>
-        <li class="nav-item"><a class="nav-link" href="login/logout.php">Logout</a></li>
+        <li class="nav-item"><a class="nav-link" href="../login/logout.php">Logout</a></li>
       <?php else: ?>
-        <li class="nav-item"><a class="nav-link" href="login/login.php">Login</a></li>
+        <li class="nav-item"><a class="nav-link" href="../login/login.php">Login</a></li>
       <?php endif; ?>
     </ul>
   </div>

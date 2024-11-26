@@ -20,13 +20,13 @@ if (isset($_GET['id'])) {
     $stmt->bind_param("i", $id);
 
     if ($stmt->execute()) {
-        header("Location: ../index.php?message=Livro+excluído+com+sucesso");
+        header("Location: ../paginas/index.php?message=Livro+excluído+com+sucesso");
         exit;
     } else {
         echo "Erro ao excluir o livro: " . $conn->error;
     }
 } else {
-    header("Location: ../index.php?error=ID+inválido");
+    header("Location: ../paginas/index.php?error=ID+inválido");
     exit;
 }
 ?>

@@ -57,8 +57,12 @@ h2 {
 }
 
 .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
+    background-color: #d3641a;
+    border-color: #ec6f1c;
+}
+
+.btn-primary:hover {
+    background-color: #ec6f1c;
 }
 
 .btn-secondary {
@@ -68,4 +72,24 @@ h2 {
 
 a:hover {
     text-decoration: none;
+}
+
+.delete-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: red;
+    font-size: 18px;
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo branco semi-transparente */
+    padding: 5px;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.delete-icon:hover {
+    background-color: rgba(255, 0, 0, 0.8);
+    color: #fff;
+    transform: scale(1.1);
 }

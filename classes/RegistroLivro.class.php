@@ -1,10 +1,10 @@
 <?php
-include 'config/database.php';
+include '../config/database.php';
 session_start();
 
 // Verifica se o usuário é administrador (nivelPermissao 2)
 if (!isset($_SESSION['user_id']) || !isset($_SESSION['nivelPermissao']) || $_SESSION['nivelPermissao'] != 2) {
-    header("Location: index.php");
+    header("Location: ../paginas/index.php");
     exit();
 }
 
@@ -18,9 +18,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $sql = "INSERT INTO Livro (titulo, anoPublicacao, fotoCapa, idCategoria, preco, idAutor) VALUES ('$titulo', '$anoPublicacao', '$fotoCapa', '$idCategoria', '$preco', '$idAutor')";
     if ($conn->query($sql) === TRUE) {
-        echo "Livro adicionado com sucesso.";
+        // Armazenar a mensagem de sucesso na sessão
+        $_SESSION['message'] = "Livro adicionado com sucesso!";
     } else {
-        echo "Erro: " . $sql . "<br>" . $conn->error;
+        // Armazenar a mensagem de erro na sessão
+        $_SESSION['message'] = "Erro: " . $conn->error;
     }
 }
 

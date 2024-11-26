@@ -1,13 +1,5 @@
 <?php
-include 'config/database.php';
-session_start();
 
-if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
-    exit();
-}
-
-// Retrieve cart items and calculate total
 $totalPrice = 0;
 $cartItems = [];
 if (!empty($_SESSION['cart'])) {
@@ -41,23 +33,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "<div class='alert alert-danger'>Error: " . $conn->error . "</div>";
     }
 }
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Checkout</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/estilo.css">
-</head>
-<body>
-<?php include 'navbar.php'; ?>
-<div class="container">
-    <h2>Checagem</h2>
-    <h3>Total: $<?= number_format($totalPrice, 2) ?></h3>
-    <form method="post">
-        <button type="submit" class="btn btn-primary">Complete Purchase</button>
-    </form>
-</div>
-</body>
-</html>

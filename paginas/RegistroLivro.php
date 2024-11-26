@@ -1,5 +1,5 @@
 <?php
-require_once('classes/RegistroLivro.class.php');
+require_once('../classes/RegistroLivro.class.php');
 
 ?>
 <!DOCTYPE html>
@@ -7,10 +7,21 @@ require_once('classes/RegistroLivro.class.php');
 <head>
     <title>Adicionar Livro</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
-<?php include 'navbar.php'; ?>
+<?php include '../navbar.php'; ?>
+
+<?php if (isset($_SESSION['message'])): ?>
+    <div class="container">
+        <div class="alert alert-info">
+            <?= $_SESSION['message']; ?>
+        </div>
+    </div>
+    <?php unset($_SESSION['message']); // Limpar a mensagem após exibir ?>
+<?php endif; ?>
+
+
 <div class="container">
     <h2>Adicionar Novo Livro</h2>
     <form method="post">
